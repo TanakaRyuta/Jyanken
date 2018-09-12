@@ -6,7 +6,7 @@ import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider'
 import RaisedButton from 'material-ui/RaisedButton'
 import Paper from 'material-ui/Paper'
 import {Tabs,Tab} from 'material-ui/Tabs'
-import {Table,TableBody,TableHeader,TableHeaderColumn,TableRow,TableRowCoulumn, TableRowColumn} from 'material-ui/Table'
+import {Table,TableBody,TableHeader,TableHeaderColumn,TableRow, TableRowColumn} from 'material-ui/Table'
 import Jyanken from './Jyanken'
 class JyankenGamePage extends Component {
     constructor(props){
@@ -60,15 +60,15 @@ const StatusBox=(props)=>{
             <TableBody displayRowCheckbox={false}>
                 <TableRow displayBorder={false}>
                     <TableHeaderColumn>勝ち</TableHeaderColumn>
-                    <TableRowCoulumn style={judgementStyle(1)}>{props.status.win}</TableRowCoulumn>
+                    <TableRowColumn style={judgmentStyle(1)}>{props.status.win}</TableRowColumn>
                 </TableRow>
                 <TableRow displayBorder={false}>
                     <TableHeaderColumn>負け</TableHeaderColumn>
-                    <TableRowCoulumn style={judgementStyle(2)}>{props.status.lose}</TableRowCoulumn>
+                    <TableRowColumn style={judgmentStyle(2)}>{props.status.lose}</TableRowColumn>
                 </TableRow>
                 <TableRow displayBorder={false}>
                     <TableHeaderColumn>引き分け</TableHeaderColumn>
-                    <TableRowCoulumn style={judgementStyle(0)}>{props.status.draw}</TableRowCoulumn>
+                    <TableRowColumn style={judgmentStyle(0)}>{props.status.draw}</TableRowColumn>
                 </TableRow>
             </TableBody>
         </Table>
@@ -113,7 +113,7 @@ const ScoreListItem=(props)=>{
     const judgementString=["引き分け","勝ち","負け"]
     const dateHHMMSS=(d)=>d.toTimeString().substr(0,8)
     return(
-        <TableRow style={judgementStyle(props.score.judgement)}>
+        <TableRow style={judgmentStyle(props.score.judgement)}>
             <TableRowColumn>{dateHHMMSS(props.score.created_at)}</TableRowColumn>
             <TableRowColumn>{teString[props.score.human]}</TableRowColumn>
             <TableRowColumn>{teString[props.score.computer]}</TableRowColumn>
@@ -124,7 +124,7 @@ const ScoreListItem=(props)=>{
 ScoreListItem.propTypes={
     score:PropTypes.object
 }
-const judgementStyle=(judgement)=>({color:["#000","#2979FF","#FF1744"][judgement]})
+const judgmentStyle=(judgment)=>({color:["#000","#2979FF","#FF1744"][judgment]})
 
 // const ScoreBox=(props)=>{
 //     const teString=["グー","チョキー","パー"]
