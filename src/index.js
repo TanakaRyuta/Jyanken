@@ -110,14 +110,14 @@ ScoreList.propTypes={
 }
 const ScoreListItem=(props)=>{
     const teString=["グー","チョキ","パー"]
-    const judgementString=["引き分け","勝ち","負け"]
+    const judgmentString=["引き分け","勝ち","負け"]
     const dateHHMMSS=(d)=>d.toTimeString().substr(0,8)
     return(
         <TableRow style={judgmentStyle(props.score.judgement)}>
             <TableRowColumn>{dateHHMMSS(props.score.created_at)}</TableRowColumn>
             <TableRowColumn>{teString[props.score.human]}</TableRowColumn>
             <TableRowColumn>{teString[props.score.computer]}</TableRowColumn>
-            <TableRowColumn>{judgementString[props.score.judgement]}</TableRowColumn>
+            <TableRowColumn>{judgmentString[props.score.judgment]}</TableRowColumn>
         </TableRow>
     )
 }
