@@ -7,7 +7,6 @@
   "scripts": {
     "start": "webpack-dev-server",
     "webpack": "webpack -d"
-    "heroku-postbuild": "npm run prod"
   },
   "keywords": [],
   "author": "",
